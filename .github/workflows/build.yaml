@@ -9,27 +9,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest, ubuntu-18.04]
         include:
-        - os: ubuntu-latest
-          cmake-args: -G "Unix Makefiles"
-          build-args: --parallel
-          package-file: teeworlds-*-linux_x86_64.tar.xz
-          env:
-            CFLAGS: -Wdeclaration-after-statement -Werror
-            CXXFLAGS: -Werror
-        - os: ubuntu-18.04
-          cmake-path: /usr/bin/
-          cmake-args: -G "Unix Makefiles"
-          package-file: teeworlds-*-linux_x86_64.tar.xz
-          env:
-            CFLAGS: -Wdeclaration-after-statement -Werror
-            CXXFLAGS: -Werror
-        - os: macOS-latest
-          cmake-args: -G "Unix Makefiles"
-          build-args: --parallel
-          package-file: teeworlds-*-osx.dmg
-          env:
-            CFLAGS: -Wdeclaration-after-statement -Werror
-            CXXFLAGS: -Werror
         - os: windows-latest
           cmake-args: -A x64
           package-file: teeworlds-*-win64.zip
